@@ -1,0 +1,73 @@
+// Estilos SCSS para páginas legales (Términos y Condiciones, Política de Privacidad)
+
+$primary-color: #0b8e6a;
+$text-color: #084c41;
+$background-color: #ffffff;
+
+.legal-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: $background-color;
+  font-family: 'Segoe UI', sans-serif;
+  color: $text-color;
+  line-height: 1.7;
+  font-size: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+
+  h1, h2, h3, h4 {
+    color: $primary-color;
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+  }
+
+  ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+
+  .back-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: $primary-color;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-container {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .legal-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .legal-container h2 {
+    font-size: 1.3rem;
+  }
+} 

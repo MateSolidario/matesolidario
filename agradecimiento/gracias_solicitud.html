@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Solicitud enviada!</title>
+  <link rel="stylesheet" href="scss/main.css" />
+</head>
+<body class="gracias-page">
+  <div class="container">
+    <h1 class="titulo-principal"><span>¡Tu solicitud fue enviada!</span></h1>
+    <p class="mensaje">¡Buenísimo! Ya verificamos tus datos y estás preaprobado. Un asesor te va a contactar por WhatsApp para continuar.</p>
+    <a class="boton-wsp" href="https://api.whatsapp.com/send?phone=543518127197&text=%C2%A1Hola%20Mate%20Solidario!%20Ya%20complete%20mi%20formulario." target="_blank" rel="noopener">Ir a WhatsApp</a>
+  </div>
+  <script>
+   setTimeout(() => {
+    window.location.href = 'https://wa.me/543518127197?text=¡Hola%20Mate%20Solidario!%20Ya%20completé%20mi%20formulario.';
+  }, 6000);
+</script>
+</body>
+</html>

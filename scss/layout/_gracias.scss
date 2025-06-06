@@ -1,0 +1,64 @@
+$accent: #0b8e6a;
+
+.gracias-page {
+  background: linear-gradient(to right, #c0f5d1, #a9c8f9);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+
+  .container {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  .titulo-principal {
+    font-size: 2.5rem;
+
+    span {
+      color: $accent;
+    }
+  }
+
+  .mensaje {
+    font-size: 1.2rem;
+    color: #444;
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+
+  .boton-wsp {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    background-color: $accent;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba($accent, 0.3);
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: darken($accent, 10%);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

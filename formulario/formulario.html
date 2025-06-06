@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitud de Crédito - Mate Solidario</title>
+  <link rel="stylesheet" href="../scss/main.css" />
+  <link rel="icon" href="../assets/ico/ico.png" type="image/png">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container header-content">
+      <img src="../assets/logo/logo.png" alt="Mate Solidario" class="logo" id="logo" />
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../index.html">Conócenos</a>
+        <a href="formulario.html" class="btn">Solicitar crédito</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="form-container" id="mateSolidarioForm">
+    <h2 class="form-title">Solicitud de Crédito</h2>
+
+    <ul class="progressbar">
+      <li class="active">Datos Personales</li>
+      <li>Datos Bancarios</li>
+      <li>Confirmación</li>
+    </ul>
+
+    <form id="multiStepForm" enctype="multipart/form-data">
+      <!-- Paso 1 - Datos Personales -->
+      <div class="step active">
+        <div class="form-group">
+          <label for="nombre">Nombre y Apellido</label>
+          <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚñáéíóú\s]+" required placeholder="Ej: Juan Pérez" />
+        </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required placeholder="ejemplo@mail.com" />
+        </div>
+        <div class="form-group">
+          <label for="telefono">Número de celular</label>
+          <div class="telefono-input">
+            <span>+549</span>
+            <input type="text" id="telefono" name="telefono" required maxlength="14" placeholder="(XXX) XXXXXXX" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 2 - Datos Bancarios -->
+      <div class="step">
+        <div class="form-group">
+          <label for="cuil">CUIL</label>
+          <input type="text" id="cuil" name="cuil" pattern="\d{11}" placeholder="" required />
+        </div>
+        <div class="form-group">
+          <label for="situacion-laboral">Situación Laboral</label>
+          <select id="situacion-laboral" name="situacion_laboral" required>
+            <option value="">Seleccione una opción</option>
+            <option>Empleado Público Provincial</option>
+            <option>Empleado Público Nacional</option>
+            <option>Empleado Público Municipal</option>
+            <option>Empleado Privado</option>
+            <option>Policía</option>
+            <option>Jubilado Provincial</option>
+            <option>Jubilado Nacional</option>
+            <option>Jubilado Municipal</option>
+            <option>Autónomo / Independiente</option>
+            <option>Monotributista</option>
+            <option>Pensionado</option>
+            <option>Beneficiario de Plan Social</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="banco">Banco de Cobro</label>
+          <select id="banco" name="banco" required>
+            <option value="">Seleccione un banco</option>
+
+            <!-- Catamarca -->
+            <option>Banco Nación</option>
+            <option>Banco Macro</option>
+            <!-- Córdoba -->
+            <option>Banco de Córdoba (Bancor)</option>
+            <option>BBVA Argentina</option>
+            <option>Banco Credicoop</option>
+
+            <!-- Santa Fe -->
+            <option>Nuevo Banco de Santa Fe</option>
+            <option>Banco Bica</option>
+
+            <!-- Río Negro -->
+            <option>Banco Patagonia</option>
+
+            <!-- Otros nacionales / privados -->
+            <option>Banco Galicia</option>
+            <option>Banco Santander</option>
+            <option>ICBC Argentina</option>
+            <option>Banco Supervielle</option>
+            <option>Citibank</option>
+            <option>Banco Hipotecario</option>
+            <option>Banco Comafi</option>
+            <option>Banco Industrial</option>
+            <option>Banco de Valores</option>
+            <option>Banco Provincia de Buenos Aires</option>
+            <option>Banco Ciudad</option>
+            <option>Banco Provincia de Neuquén</option>
+
+            <!-- Genérico -->
+            <option>Otro Banco</option>
+
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="provincia">Provincia</label>
+          <select id="provincia" name="provincia" required>
+            <option value="">Seleccione su provincia</option>
+            <option>Buenos Aires</option>
+            <option>CABA</option>
+            <option>Catamarca</option>
+            <option>Chaco</option>
+            <option>Chubut</option>
+            <option>Córdoba</option>
+            <option>Corrientes</option>
+            <option>Entre Ríos</option>
+            <option>Formosa</option>
+            <option>Jujuy</option>
+            <option>La Pampa</option>
+            <option>La Rioja</option>
+            <option>Mendoza</option>
+            <option>Misiones</option>
+            <option>Neuquén</option>
+            <option>Río Negro</option>
+            <option>Salta</option>
+            <option>San Juan</option>
+            <option>San Luis</option>
+            <option>Santa Cruz</option>
+            <option>Santa Fe</option>
+            <option>Santiago del Estero</option>
+            <option>Tierra del Fuego</option>
+            <option>Tucumán</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="recibo">Recibo de sueldo (opcional)</label>
+          <input type="file" id="recibo" name="recibo" accept=".pdf,.jpg,.jpeg,.png" />
+          <small>Adjuntar agiliza la calificación. Tamaño máx: 5MB.</small>
+        </div>
+      </div>
+
+      <!-- Paso 3 - Confirmación -->
+      <div class="step">
+        <div class="form-group inline-checkbox">
+          <label for="terminos">
+            <input type="checkbox" id="terminos" name="terminos" required />
+              <span>Acepto los <a href="../legal/terminos_y_condiciones.html" target="_blank">Términos y Condiciones</a> y la <a href="../legal/politica_de_privacidad.html" target="_blank">Política de Privacidad</a>.</span>
+          </label>
+        </div>
+
+        <div class="form-group inline-checkbox">
+          <label for="autorizoContactar">
+           <input type="checkbox" id="autorizoContactar" name="autorizo_contactar" />
+            <span>Autorizo a MateSolidario a contactarme en el futuro si se habilitan propuestas en mi zona o compatibles con mi perfil.</span>
+          </label>
+        </div>
+
+        <p style="font-size: 0.875rem; color: #666; margin-top: 1rem; line-height: 1.4;">
+          Tus datos serán tratados conforme a la Ley 25.326 de Protección de Datos Personales. Podés ejercer tus derechos de acceso, rectificación o supresión escribiéndonos a <a href="mailto:info@matesolidario.com.ar">info@matesolidario.com.ar</a>. Más info en <a href="https://www.argentina.gob.ar/aaip" target="_blank">www.argentina.gob.ar/aaip</a>.
+        </p>
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="prevBtn" disabled>Anterior</button>
+        <button type="button" id="nextBtn">Siguiente</button>
+        <button type="submit" id="submitBtn" style="display:none;">Enviar</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="../js/formulario.js"></script>
+</body>
+</html>

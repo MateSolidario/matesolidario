@@ -1,0 +1,22 @@
+// Utilidades
+@import "utils/variables";
+//@import "utils/mixins";
+
+// Base
+@import "base/reset";
+//@import "base/typography";
+
+// Componentes
+@import "components/buttons";
+
+//@import "components/cards";
+// Layout
+@import "layout/header";
+//@import "layout/grid";
+@import "layout/hero";
+@import "layout/sections";
+@import "layout/formulario";
+@import "layout/gracias";
+@import "layout/footer";
+
+@import "layout/legales";

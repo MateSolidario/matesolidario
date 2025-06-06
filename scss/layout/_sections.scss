@@ -1,0 +1,258 @@
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  $titulo-verde: #06896f; // El verde del botón (ajustalo si usás una variable real)
+
+.titulo-principal {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #082032;
+  margin: 2rem 0 1rem;
+  position: relative;
+  display: inline-block;
+  animation: fadeInUp 1s ease-out;
+
+  span {
+    color: $titulo-verde;
+    position: relative;
+  }
+
+  span::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $titulo-verde;
+    margin-top: 0.4rem;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &:hover span::after {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  .requisitos-section,
+  .provincias-section {
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .requisitos-section {
+    background-color: #f9f9f9;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: $accent;
+    }
+
+    .requisitos-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+
+      .requisito {
+        width: 180px;
+        padding: 1rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+        text-align: center;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        .provincia-icon {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          i {
+            color: $accent;
+          }
+        }
+
+        p {
+          font-weight: 600;
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  .provincias-section {
+    background-color: white;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #082032;
+    }
+
+    .provincia-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: stretch; /* Esta línea asegura que las cards tengan la misma altura */
+    }
+
+    .provincia-card {
+      background-color: #f8f8f8;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+  /* Elimina height: 100% para que flexbox controle la altura */
+
+      .provincia-icon {
+        font-size: 2rem;
+        color: $accent;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        color: #082032;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #2c2c2c;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 1.5rem;
+
+        li {
+          margin: 0.3rem 0;
+          color: #222;
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+
+  .nosotros-section,
+.por-que-elegirnos-section {
+  padding: 4rem 0;
+  background-color: #fff;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: $accent; // si $accent ya está definido
+  }
+
+  p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+  }
+}
+
+.por-que-elegirnos-section {
+  background-color: #f9f9f9;
+
+  .beneficios-list {
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: 1.1rem;
+      color: #222;
+      margin: 1rem 0;
+      position: relative;
+      padding-left: 2rem;
+      text-align: left;
+
+      &::before {
+        content: "✔";
+        color: $accent;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: bold;
+      }
+    }
+  }
+}
+.ventajas-mate-solidario {
+  margin-top: 3rem;
+  h3 {
+    font-size: 1.8rem;
+    color: $accent;
+    margin-bottom: 2rem;
+  }
+
+  .ventajas-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .ventaja-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    width: 200px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    i {
+      font-size: 2.5rem;
+      color: $accent;
+      margin-bottom: 0.8rem;
+    }
+
+    h4 {
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: #0b2447;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  }
+}

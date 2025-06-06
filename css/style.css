@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to right, #c0f5d1, #a9c8f9);
+  color: #084c41;
+}
+
+.btn-primary,
+.btn-provincia {
+  background: #0b8e6a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn-primary:hover,
+.btn-provincia:hover {
+  background: #076b53;
+}
+
+.btn-provincia {
+  padding: 0.6rem 1.2rem;
+}
+
+.main-header {
+  background: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.main-header .logo {
+  height: 50px;
+}
+.main-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header .nav {
+  display: flex;
+  gap: 2rem;
+}
+.main-header .nav a {
+  text-decoration: none;
+  color: #084c41;
+  font-weight: bold;
+}
+.main-header .nav a.btn {
+  background: #0b8e6a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+.main-header .nav a.btn:hover {
+  background: #076b53;
+}
+
+.hero-section {
+  padding: 4rem 0;
+  text-align: center;
+}
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.requisitos-section,
+.provincias-section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.requisitos-section {
+  background-color: #f9f9f9;
+}
+.requisitos-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #084c41;
+}
+.requisitos-section .requisitos-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.requisitos-section .requisitos-grid .requisito {
+  width: 180px;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+.requisitos-section .requisitos-grid .requisito:hover {
+  transform: scale(1.05);
+}
+.requisitos-section .requisitos-grid .requisito .provincia-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.requisitos-section .requisitos-grid .requisito .provincia-icon i {
+  color: #084c41;
+}
+.requisitos-section .requisitos-grid .requisito p {
+  font-weight: 600;
+  color: #084c41;
+}
+
+.provincias-section {
+  background-color: white;
+}
+.provincias-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #082032;
+}
+.provincias-section .provincia-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.provincias-section .provincia-card {
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.provincias-section .provincia-card .provincia-icon {
+  font-size: 2rem;
+  color: #084c41;
+  margin-bottom: 1rem;
+}
+.provincias-section .provincia-card h3 {
+  font-size: 1.4rem;
+  color: #082032;
+  margin-bottom: 0.5rem;
+}
+.provincias-section .provincia-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+.provincias-section .provincia-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.provincias-section .provincia-card ul li {
+  margin: 0.3rem 0;
+  color: #222;
+  font-size: 0.95rem;
+}/*# sourceMappingURL=main.css.map */ 
