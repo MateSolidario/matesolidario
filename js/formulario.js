@@ -93,14 +93,13 @@ form.addEventListener('submit', async e => {
   }
 
   try {
+    // Enviamos FormData directamente SIN Content-Type explícito
     const response = await fetch('https://script.google.com/macros/s/AKfycbxFMSh2Nlh7HpzhAU_f5xjzF8vamKPuoagTmZV-IClMXPYucBjNHas51DrSMvgTjcgPEQ/exec', {
       method: 'POST',
-      body: formData // 👈 Enviamos como FormData para evitar problemas de CORS
+      body: formData,
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const result = await response.json();
     console.log('✅ Respuesta del servidor:', result);
