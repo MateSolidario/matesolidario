@@ -75,6 +75,7 @@ form.addEventListener('submit', async e => {
 
   let esGanado = false;
 
+  // Lógica para determinar si es "Ganado" o "Perdido"
   if (provincia === 'Córdoba') {
     const esEmpleadoPublico = situacionLaboral.includes('Empleado Público');
     const esJubilado = situacionLaboral.includes('Jubilado');
@@ -93,17 +94,23 @@ form.addEventListener('submit', async e => {
   }
 
   try {
+    // Enviar los datos a Google Apps Script
     const response = await fetch('https://script.google.com/macros/s/AKfycbxFMSh2Nlh7HpzhAU_f5xjzF8vamKPuoagTmZV-IClMXPYucBjNHas51DrSMvgTjcgPEQ/exec', {
       method: 'POST',
       headers: {
-        
+        'Content-Type': 'application/json', // Especificamos que los datos son en formato JSON
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data) // Convertimos el objeto en JSON
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
     const result = await response.json();
     console.log('✅ Respuesta del servidor:', result);
 
+    // Redirigir dependiendo de si es "Ganado" o "Perdido"
     setTimeout(() => {
       if (esGanado) {
         window.location.href = '../agradecimiento/gracias_solicitud.html';
@@ -114,10 +121,12 @@ form.addEventListener('submit', async e => {
 
   } catch (error) {
     console.error('❌ Error al enviar datos:', error);
+    // En caso de error, redirigir a una página de error
     setTimeout(() => {
       window.location.href = '../agradecimiento/graciastest.html';
     }, 2000);
   } finally {
+    // Rehabilitar los botones una vez que termine el proceso
     submitBtn.disabled = false;
     nextBtn.disabled = false;
     prevBtn.disabled = currentStep === 0;
