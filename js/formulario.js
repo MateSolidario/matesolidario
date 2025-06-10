@@ -64,6 +64,9 @@ form.addEventListener('submit', async e => {
     formData.append('autorizo_contactar', 'false');
   }
 
+  // Convertimos FormData a x-www-form-urlencoded
+  const plainFormData = new URLSearchParams(formData).toString();
+
   const data = {};
   formData.forEach((value, key) => {
     data[key] = value;
@@ -93,10 +96,12 @@ form.addEventListener('submit', async e => {
   }
 
   try {
-    // Enviamos FormData directamente SIN Content-Type explícito
     const response = await fetch('https://script.google.com/macros/s/AKfycbxFMSh2Nlh7HpzhAU_f5xjzF8vamKPuoagTmZV-IClMXPYucBjNHas51DrSMvgTjcgPEQ/exec', {
       method: 'POST',
-      body: formData,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: plainFormData,
     });
 
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
