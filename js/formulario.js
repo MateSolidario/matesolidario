@@ -96,7 +96,7 @@ form.addEventListener('submit', async e => {
   }
 
   try {
-    const response = await fetch("https://TUWORKER.tuusuario.workers.dev", {
+    const response = await fetch("https://proxy-appscript.mateprestamos.workers.dev", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
