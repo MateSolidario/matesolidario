@@ -96,10 +96,10 @@ form.addEventListener('submit', async e => {
   }
 
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxFMSh2Nlh7HpzhAU_f5xjzF8vamKPuoagTmZV-IClMXPYucBjNHas51DrSMvgTjcgPEQ/exec', {
-      method: 'POST',
+    const response = await fetch("https://TUWORKER.tuusuario.workers.dev", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        "Content-Type": "application/x-www-form-urlencoded"
       },
       body: plainFormData,
     });
