@@ -102,6 +102,7 @@ form.addEventListener('submit', async e => {
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const result = await response.json();
+    if (result.result !== "OK") throw new Error(`Error en respuesta: ${result.message || 'Desconocido'}`);
     console.log('✅ Respuesta del servidor:', result);
 
     setTimeout(() => {
