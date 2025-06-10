@@ -104,9 +104,19 @@ form.addEventListener('submit', async e => {
       body: plainFormData,
     });
 
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const contentType = response.headers.get("content-type") || "";
 
-    const result = await response.json();
+    let result;
+    if (contentType.includes("application/json")) {
+      result = await response.json();
+    } else {
+      // Si la respuesta no es JSON, la tratamos como texto
+      const text = await response.text();
+      console.error('❌ Respuesta inesperada del backend (no es JSON):', text);
+      throw new Error('Respuesta inesperada del backend (no es JSON)');
+    }
+
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     if (result.result !== "OK") throw new Error(`Error en respuesta: ${result.message || 'Desconocido'}`);
     console.log('✅ Respuesta del servidor:', result);
 
