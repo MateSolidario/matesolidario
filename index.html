@@ -13,7 +13,9 @@
   <!-- Header -->
   <header class="main-header">
   <div class="container header-content">
-    <img src="assets/logo/logo.png" alt="Mate Solidario" class="logo" id="logo" />
+     <a href="index.html">
+        <img src="assets/logo/logo.png" alt="Mate Solidario" class="logo" id="logo" />
+      </a>
     <nav class="nav">
       <a href="#inicio">Inicio</a>
       <a href="#conocenos">Conocenos</a>
@@ -30,8 +32,7 @@
       <a href="formulario/formulario.html" class="btn btn-primary">Comenzar gestion</a>
     </div>
   </section>
-  
-   <section id="requisitos" class="requisitos-section">
+  <section id="requisitos" class="requisitos-section">
   <div class="container">
     <h2>¿Qué necesitás para solicitar tu crédito?</h2>
     <div class="requisitos-grid">
@@ -88,7 +89,7 @@
 </section>
 <section id="nosotros" class="nosotros-section">
   <div class="container">
-    <h2>Quiénes Somos</h2>
+    <h2 id="conocenos">Quiénes Somos</h2>
     <p>
       MateSolidario nace de un equipo comprometido con facilitar el acceso a créditos personales a través de convenios con mutuales registradas. 
       Nuestra misión es brindar soluciones financieras accesibles y confiables para quienes necesitan apoyo económico de manera rápida y segura. 
@@ -137,6 +138,49 @@
     </div>
   </div>
 </section>
+<section class="legales-section container">
+  <h2>Transparencia y Datos Legales</h2>
+  <div class="info-box">
+    <h3>Sobre Datos</h3>
+    <p>
+      Mate Solidario es una plataforma independiente que gestiona solicitudes de crédito en nombre de mutuales registradas, como Red Unisol y Amejuca. 
+      No otorgamos créditos ni cobramos comisiones a los solicitantes. 
+      Las condiciones y aprobación de cada crédito dependen exclusivamente de las mutuales intervinientes.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h3>Sobre Comisiones</h3>
+    <p>
+      Mate Solidario no cobra ninguna comisión al solicitante. Nuestra gestión es 100% gratuita para quien solicita el crédito. Nuestro ingreso proviene de convenios con mutuales registradas.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h3>Información sobre tasas</h3>
+    <p>
+      Las tasas dependen de la mutual con la que se tramite el crédito. En todos los casos, el solicitante recibirá la información completa (TNA, CFT, cuotas, monto final) antes de aceptar el préstamo. Si lo desea, puede pedirla de forma anticipada.
+    </p>
+  </div>
+  <div class="info-box">
+  <h3>Sobre Convenios y Mutualidades</h3>
+  <p>
+    Mate Solidario gestiona solicitudes de crédito exclusivamente a través de los convenios vigentes con mutuales registradas, actualmente Red Unisol y Amejuca. Los convenios y mutuales participantes pueden variar; cualquier cambio será informado oportunamente en esta página.
+  </p>
+</div>
+<div class="info-box">
+  <h3>Sobre Requisitos y Bancos Operativos</h3>
+  <p>
+    Los requisitos para solicitar un crédito, así como las entidades bancarias o tipos de cuentas aceptadas, pueden modificarse según la provincia y los convenios vigentes. Consulte periódicamente para conocer los requisitos y condiciones actualizadas.
+  </p>
+</div>
+<div class="info-box aviso-rol">
+    <i class="fa-solid fa-circle-info"></i>
+    <p>
+      Mate Solidario actúa como gestor externo de solicitudes de crédito. No otorga créditos ni retiene documentación. La aprobación y otorgamiento dependen exclusivamente de las mutuales intervinientes.
+    </p>
+  </div>
+</section>
 <footer class="main-footer" role="contentinfo">
   <div class="container footer-content">
     
@@ -150,20 +194,22 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#conocenos">Conocenos</a></li>
         <li><a href="formulario/formulario.html">Solicitar crédito</a></li>
+        <li><a href="legal/terminos_y_condiciones.html">Términos y Condiciones</a></li>
+        <li><a href="legal/politica_de_privacidad.html">Política de Privacidad</a></li>
       </ul>
     </nav>
 
     <address class="footer-contacto">
       <h4>Contacto</h4>
       <ul>
-        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:matesolidario@gmail.com">matesolidario@gmail.com</a></li>
+        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contacto@matesolidario.com.ar">contacto@matesolidario.com.ar</a></li>
         <li><i class="fa-solid fa-phone"></i> <a href="tel:+543518127197">+54 9 351 812 7197</a></li>
       </ul>
     </address>
 
     <div class="footer-redes" aria-label="Redes sociales">
       <h4>Seguinos</h4>
-      <div class="redes-icons">
+        <div class="redes-icons">
         <a href="https://www.facebook.com/people/Mate-Solidario/61576186295289/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/matesolidario" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -175,6 +221,6 @@
     <p>&copy; 2025 Mate Solidario. Todos los derechos reservados.</p>
   </div>
 </footer>
-  <script src="js/script.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
