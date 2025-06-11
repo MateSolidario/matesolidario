@@ -1,6 +1,6 @@
 // Estilos SCSS para páginas legales (Términos y Condiciones, Política de Privacidad)
 
-$primary-color: #0b8e6a;
+$primary-color: #084c41;
 $text-color: #084c41;
 $background-color: #ffffff;
 
@@ -55,6 +55,81 @@ $background-color: #ffffff;
       background-color: darken($primary-color, 10%);
     }
   }
+}
+.legales-section{
+  margin: 3rem auto 2rem;
+  padding: 2rem 1.5rem;
+  background: #f5faf7;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(8, 32, 50, 0.08);
+  max-width: 760px;
+
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+  }
+
+  .legales-box {
+    background: white;
+    border-left: 4px solid $primary-color;
+    padding: 1rem 1.5rem 1rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+
+    p {
+      color: $accent;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+
+  .info-box {
+    background: #e7f7f0;
+    border-left: 4px solid $titulo-verde;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+
+    h3 {
+      color: $titulo-verde;
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+    p {
+      color: $accent;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    &.aviso-rol {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      background: #fffbe7;
+      border-left: 4px solid #f5c042;
+      i {
+        color: #f5c042;
+        font-size: 1.5rem;
+        margin-top: 0.15rem;
+      }
+      p {
+        color: #856404;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.footer-legales {
+  color: #ffffff;
+  font-size: 0.92rem;
+  margin-top: 0.7rem;
+  line-height: 1.3;
+  text-align: center;
 }
 
 @media (max-width: 480px) {
