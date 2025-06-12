@@ -3,19 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>¡Solicitud enviada!</title>
-  <link rel="stylesheet" href="scss/main.css" />
+  <title>Gracias por tu consulta</title>
+  <link rel="stylesheet" href="../scss/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="../assets/ico/ico.png" type="image/png">
 </head>
-<body class="gracias-page">
-  <div class="container">
-    <h1 class="titulo-principal"><span>¡Tu solicitud fue enviada!</span></h1>
-    <p class="mensaje">¡Buenísimo! Ya verificamos tus datos y estás preaprobado. Un asesor te va a contactar por WhatsApp para continuar.</p>
-    <a class="boton-wsp" href="https://api.whatsapp.com/send?phone=543518127197&text=%C2%A1Hola%20Mate%20Solidario!%20Ya%20complete%20mi%20formulario." target="_blank" rel="noopener">Ir a WhatsApp</a>
-  </div>
+<style>
+  /* CSS para el botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2.5rem;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background 0.2s, transform 0.2s;
+}
+.whatsapp-float:hover {
+  background: #18b957;
+  transform: scale(1.1);
+  color: #fff;
+  text-decoration: none;
+}
+</style>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container header-content">
+      <img src="../assets/logo/logo.png" alt="Mate Solidario" class="logo" id="logo" />
+      <nav class="nav">
+        <a href="../index.html#inicio">Inicio</a>
+        <a href="../index.html#conocenos">Conocenos</a>
+        <a href="../formulario/formulario.html" class="btn">Solicitar crédito</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido de agradecimiento -->
+  <main class="form-container gracias-container">
+    <h2>¡Tu solicitud fue enviada! 🎉</h2>
+    <p class="mensaje">
+      ¡Buenísimo! Ya verificamos tus datos y estás preaprobado.<br/>
+      Un asesor te va a contactar por WhatsApp para continuar.<br/>
+      <strong>Te redirigiremos automáticamente a WhatsApp en unos segundos...</strong>
+    </p>
+    <div class="buttons" style="justify-content: center;">
+      <a href="../index.html" class="btn btn-primary">Volver al inicio</a>
+    </div>
+    
+  </main>
+  <br><br><br><br><br><br><br><br><br><br>
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <img src="../assets/logo/logo.png" alt="Mate Solidario Logo">
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#conocenos">Conocenos</a></li>
+          <li><a href="../formulario/formulario.html">Solicitar crédito</a></li>
+        </ul>
+      </div>
+      <div class="footer-contacto">
+        <h4>Contacto</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> contacto@matesolidario.com</li>
+          <li><i class="fa-solid fa-phone"></i> +54 9 351 812 7197</li>
+        </ul>
+      </div>
+      <div class="footer-redes">
+        <h4>Seguinos</h4>
+        <div class="redes-icons">
+          <a href="https://www.facebook.com/people/Mate-Solidario/61576186295289/"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/matesolidario"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mate Solidario. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <!-- Botón flotante de WhatsApp -->
+<a href="https://api.whatsapp.com/send?phone=543518127197&text=%C2%A1Hola%20Mate%20Solidario!%20Ya%20complete%20mi%20formulario." 
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
   <script>
-   setTimeout(() => {
-    window.location.href = 'https://wa.me/543518127197?text=¡Hola%20Mate%20Solidario!%20Ya%20completé%20mi%20formulario.';
-  }, 6000);
-</script>
+    setTimeout(() => {
+      window.location.href = 'https://api.whatsapp.com/send?phone=543518127197&text=%C2%A1Hola%20Mate%20Solidario!%20Ya%20complete%20mi%20formulario.';
+    }, 6000);
+  </script>
 </body>
 </html>
