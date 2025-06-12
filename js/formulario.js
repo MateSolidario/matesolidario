@@ -155,6 +155,12 @@ form.addEventListener('submit', async (e) => {
     // Ignora cualquier error, solo lo muestra en consola para debug
     console.error('❌ Error al enviar datos (ignorado para redirección):', error);
   } finally {
+    // ----> CONVERSIÓN FACEBOOK PIXEL Lead <----
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead');
+      // Si querés un evento personalizado, usá:
+      // fbq('trackCustom', 'FormularioEnviado');
+    }
     // SIEMPRE redirige según la lógica local (sin depender del backend)
     setTimeout(() => {
       window.location.href = esGanado
