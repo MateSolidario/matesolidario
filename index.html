@@ -22,12 +22,18 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="main-header">
+ <header class="main-header">
   <div class="container header-content">
-     <a href="index.html">
-        <img src="assets/logo/logo.webp" alt="Mate Solidario" class="logo" id="logo" width="50px" height="50px"/>
-      </a>
-    <nav class="nav">
+    <a href="index.html">
+      <img src="assets/logo/logo.webp" alt="Mate Solidario" class="logo" id="logo" width="50" height="50"/>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <!-- El SVG debe estar DENTRO del botón -->
+      <svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 448 512" fill="#0b8e6a">
+        <path d="M16 132h416c8.8 0 16-7.2 16-16V100c0-8.8-7.2-16-16-16H16C7.2 84 0 91.2 0 100v16c0 8.8 7.2 16 16 16zm416 60H16c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16zm0 112H16c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16z"/>
+      </svg>
+    </button>
+    <nav class="nav" id="mainNav">
       <a href="#inicio">Inicio</a>
       <a href="#conocenos">Conocenos</a>
       <a href="formulario/formulario.html" class="btn">Solicitá tu crédito</a>
