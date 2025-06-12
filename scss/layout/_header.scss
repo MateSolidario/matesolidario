@@ -1,104 +1,139 @@
 .main-header {
   background: white;
   padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid #eee;
+}
 
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0 1rem;
-    gap: 1rem;
-  }
+.main-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  gap: 1rem;
+  position: relative;
+}
 
-  // Logo con efecto
 .logo {
   width: auto;
   height: 50px;
   transition: transform 0.3s ease;
+  display: block;
+}
+.logo:hover {
+  transform: rotate(-4deg) scale(1.05);
+}
 
-  &:hover {
-    transform: rotate(-4deg) scale(1.05);
+// Hamburger button (menu) - oculto en desktop
+.nav-toggle {
+  display: none; // Oculto por defecto (escritorio)
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.5rem;
+  z-index: 2000;
+
+  svg {
+    display: block;
+    width: 28px;
+    height: 28px;
+    fill: #0b8e6a;
   }
 }
 
-// Responsive
-@media (max-width: 768px) {
-  .titulo-principal {
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-  }
+// Navegación (desktop)
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: static;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  transition: none;
+}
 
+.nav a {
+  text-decoration: none;
+  color: $accent; // Reemplaza por tu color
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.nav a:hover {
+  color: darken($accent, 10%);
+  transform: translateY(-2px);
+}
+.nav a.btn {
+  background: $primary-color; // Reemplaza por tu color
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.nav a.btn:hover {
+  background: lighten($primary-color, 5%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-1px) scale(1.03);
+}
+
+// Móvil: menú hamburguesa elegante
+@media (max-width: 768px) {
+  .main-header .header-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    position: relative;
+  }
   .logo {
-    height: 32px;
+    height: 40px;
   }
-}
-
+  .nav-toggle {
+    display: block;
+  }
   .nav {
+    position: absolute;
+    top: 62px; // justo debajo del header
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 2rem 1.2rem 2rem 1.2rem;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.08), 0 1.5px 6px rgba(44,62,80,0.10);
+    z-index: 1000;
+    border-radius: 16px;
+    max-width: 95vw;
+    width: 95vw;
+    min-width: 260px;
+    border: 1px solid #e7e7e7;
+    transition: all 0.25s cubic-bezier(.5,1.8,.7,.8);
+  }
+  .nav.open {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-
-    a {
-      text-decoration: none;
-      color: $accent;
-      font-weight: bold;
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: darken($accent, 10%);
-        transform: translateY(-2px);
-      }
-
-      &.btn {
-        background: $primary-color;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        white-space: nowrap;
-
-        &:hover {
-          background: lighten($primary-color, 5%);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-          transform: translateY(-1px) scale(1.03);
-        }
-      }
-    }
   }
-}
-
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    align-items: center; // CENTRAR TODO EN MÓVIL
-    gap: 1rem;
-  }
-
-  .nav {
-    flex-direction: column;
-    align-items: center;
+  .nav a {
     width: 100%;
-    gap: 0.5rem;
-
-    a {
-      width: auto;
-      text-align: center;
-      padding: 0;
-    }
-
-    .btn {
-      width: 90%;
-      max-width: 300px;
-    }
+    text-align: center;
+    padding: 0.7rem 0;
+    font-size: 1.15rem;
+  }
+  .nav .btn {
+    max-width: 320px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.12rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
   }
 }
-
