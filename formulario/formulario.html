@@ -2,220 +2,239 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Solicitud de Crédito - Mate Solidario</title>
-  <link rel="stylesheet" href="../scss/main.css" />
+  <meta name="description" content="Solicitá tu crédito personal rápido y seguro con Mate Solidario. Proceso transparente, sin comisiones y con respaldo mutual.">
+  <meta name="keywords" content="créditos, préstamos, solidario, financiación, mate solidario, formulario, Argentina">
+  <meta name="author" content="Mate Solidario">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Solicitud de Crédito - Mate Solidario">
+  <meta property="og:description" content="Completá el formulario para acceder a tu crédito solidario en minutos.">
+  <meta property="og:image" content="https://matesolidario.com.ar/assets/logo/logo.png">
+  <meta property="og:url" content="https://matesolidario.com.ar/formulario/formulario.html">
+  <meta property="og:type" content="website">
   <link rel="icon" href="../assets/ico/ico.png" type="image/png">
+  <link rel="stylesheet" href="../scss/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header class="main-header">
     <div class="container header-content">
       <a href="../index.html">
-        <img src="../assets/logo/logo.webp" alt="Mate Solidario" class="logo" id="logo" />
+        <img src="../assets/logo/logo.webp" alt="Mate Solidario" class="logo" id="logo" width="50" height="50" loading="lazy"/>
       </a>
-      <nav class="nav">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" tabindex="0">
+        <svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 448 512" fill="#0b8e6a">
+          <path d="M16 132h416c8.8 0 16-7.2 16-16V100c0-8.8-7.2-16-16-16H16C7.2 84 0 91.2 0 100v16c0 8.8 7.2 16 16 16zm416 60H16c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16zm0 112H16c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16z"/>
+        </svg>
+      </button>
+      <nav class="nav" id="mainNav">
         <a href="../index.html">Inicio</a>
-        <a href="../index.html#conocenos">Conócenos</a>
-        <a href="formulario.html" class="btn">Solicitar crédito</a>
+        <a href="../index.html#conocenos">Conocenos</a>
+        <a href="formulario.html" class="btn">Solicitá tu crédito</a>
       </nav>
     </div>
   </header>
 
-  <div class="form-container" id="mateSolidarioForm">
-    <h2 class="form-title">Solicitud de Crédito</h2>
+  <main>
+    <section class="form-container" id="mateSolidarioForm">
+      <h1 class="form-title">Solicitud de Crédito</h1>
 
-    <ul class="progressbar">
-      <li class="active">Datos Personales</li>
-      <li>Datos Bancarios</li>
-      <li>Confirmación</li>
-    </ul>
+      <ul class="progressbar" aria-label="Progreso del formulario">
+        <li class="active">Datos Personales</li>
+        <li>Datos Bancarios</li>
+        <li>Confirmación</li>
+      </ul>
 
-    <form id="multiStepForm" enctype="multipart/form-data">
-      <!-- Paso 1 - Datos Personales -->
-      <div class="step active">
-        <div class="form-group">
-          <label for="nombre">Nombre y Apellido</label>
-          <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚñáéíóú\s]+" required placeholder="Ej: Juan Pérez" />
-        </div>
-        <div class="form-group">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" required placeholder="ejemplo@mail.com" />
-        </div>
-        <div class="form-group">
-          <label for="telefono">Número de celular</label>
-          <div class="telefono-input">
-            <span>+549</span>
-            <input type="text" id="telefono" name="telefono" required maxlength="14" placeholder="(XXX) XXXXXXX" />
+      <form id="multiStepForm" enctype="multipart/form-data" autocomplete="on" novalidate>
+        <!-- Paso 1 - Datos Personales -->
+        <fieldset class="step active" aria-label="Datos personales">
+          <legend class="sr-only">Datos Personales</legend>
+          <div class="form-group">
+            <label for="nombre">Nombre y Apellido</label>
+            <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚñáéíóú\s]+" required placeholder="Ej: Juan Pérez" autocomplete="name"/>
           </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="ejemplo@mail.com" autocomplete="email"/>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Número de celular</label>
+            <div class="telefono-input">
+              <span>+549</span>
+              <input type="tel" inputmode="numeric" id="telefono" name="telefono" required maxlength="14" placeholder="(XXX) XXXXXXX" autocomplete="tel"/>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Paso 2 - Datos Bancarios -->
+        <fieldset class="step" aria-label="Datos bancarios">
+          <legend class="sr-only">Datos Bancarios</legend>
+          <div class="form-group">
+            <label for="cuil">CUIL</label>
+            <input type="text" id="cuil" name="cuil" pattern="\d{11}" maxlength="11" required autocomplete="off"/>
+          </div>
+          <div class="form-group">
+            <label for="situacion-laboral">Situación Laboral</label>
+            <select id="situacion-laboral" name="situacion_laboral" required>
+              <option value="">Seleccione una opción</option>
+              <option>Empleado Público Provincial</option>
+              <option>Empleado Público Nacional</option>
+              <option>Empleado Público Municipal</option>
+              <option>Empleado Privado</option>
+              <option>Policía</option>
+              <option>Jubilado Provincial</option>
+              <option>Jubilado Nacional</option>
+              <option>Jubilado Municipal</option>
+              <option>Autónomo / Independiente</option>
+              <option>Monotributista</option>
+              <option>Pensionado</option>
+              <option>Beneficiario de Plan Social</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="banco">Banco de Cobro</label>
+            <select id="banco" name="banco" required>
+              <option value="">Seleccione un banco</option>
+              <!-- Catamarca -->
+              <option>Banco Nación</option>
+              <option>Banco Macro</option>
+              <!-- Córdoba -->
+              <option>Banco de Córdoba (Bancor)</option>
+              <option>BBVA Argentina</option>
+              <option>Banco Credicoop</option>
+              <!-- Santa Fe -->
+              <option>Nuevo Banco de Santa Fe</option>
+              <option>Banco Bica</option>
+              <!-- Río Negro -->
+              <option>Banco Patagonia</option>
+              <!-- Otros nacionales / privados -->
+              <option>Banco Galicia</option>
+              <option>Banco Santander</option>
+              <option>ICBC Argentina</option>
+              <option>Banco Supervielle</option>
+              <option>Citibank</option>
+              <option>Banco Hipotecario</option>
+              <option>Banco Comafi</option>
+              <option>Banco Industrial</option>
+              <option>Banco de Valores</option>
+              <option>Banco Provincia de Buenos Aires</option>
+              <option>Banco Ciudad</option>
+              <option>Banco Provincia de Neuquén</option>
+              <option>Otro Banco</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="provincia">Provincia</label>
+            <select id="provincia" name="provincia" required>
+              <option value="">Seleccione su provincia</option>
+              <option>Buenos Aires</option>
+              <option>CABA</option>
+              <option>Catamarca</option>
+              <option>Chaco</option>
+              <option>Chubut</option>
+              <option>Córdoba</option>
+              <option>Corrientes</option>
+              <option>Entre Ríos</option>
+              <option>Formosa</option>
+              <option>Jujuy</option>
+              <option>La Pampa</option>
+              <option>La Rioja</option>
+              <option>Mendoza</option>
+              <option>Misiones</option>
+              <option>Neuquén</option>
+              <option>Río Negro</option>
+              <option>Salta</option>
+              <option>San Juan</option>
+              <option>San Luis</option>
+              <option>Santa Cruz</option>
+              <option>Santa Fe</option>
+              <option>Santiago del Estero</option>
+              <option>Tierra del Fuego</option>
+              <option>Tucumán</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- Paso 3 - Confirmación -->
+        <fieldset class="step" aria-label="Confirmación y envío">
+          <legend class="sr-only">Confirmación</legend>
+          <div class="form-group inline-checkbox">
+            <label for="terminos">
+              <input type="checkbox" id="terminos" name="terminos" required />
+              <span>Acepto los <a href="../legal/terminos_y_condiciones.html" target="_blank" rel="noopener">Términos y Condiciones</a> y la <a href="../legal/politica_de_privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>.</span>
+            </label>
+          </div>
+          <div class="form-group inline-checkbox">
+            <label for="autorizoContactar">
+              <input type="checkbox" id="autorizoContactar" name="autorizo_contactar" />
+              <span>Autorizo a Mate Solidario a contactarme en el futuro si se habilitan propuestas en mi zona o compatibles con mi perfil.</span>
+            </label>
+          </div>
+          <p class="aviso-datos" style="font-size: 0.875rem; color: #666; margin-top: 1rem; line-height: 1.4;">
+            Tus datos serán tratados conforme a la Ley 25.326 de Protección de Datos Personales. Podés ejercer tus derechos de acceso, rectificación o supresión escribiéndonos a <a href="mailto:info@matesolidario.com.ar">info@matesolidario.com.ar</a>. Más info en <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener">www.argentina.gob.ar/aaip</a>.
+          </p>
+        </fieldset>
+
+        <div class="buttons">
+          <button type="button" id="prevBtn" disabled aria-label="Anterior">Anterior</button>
+          <button type="button" id="nextBtn" aria-label="Siguiente">Siguiente</button>
+          <button type="submit" id="submitBtn" style="display:none;" aria-label="Enviar solicitud">Enviar</button>
         </div>
-      </div>
+      </form>
+    </section>
+  </main>
 
-      <!-- Paso 2 - Datos Bancarios -->
-      <div class="step">
-        <div class="form-group">
-          <label for="cuil">CUIL</label>
-          <input type="text" id="cuil" name="cuil" pattern="\d{11}" placeholder="" required />
-        </div>
-        <div class="form-group">
-          <label for="situacion-laboral">Situación Laboral</label>
-          <select id="situacion-laboral" name="situacion_laboral" required>
-            <option value="">Seleccione una opción</option>
-            <option>Empleado Público Provincial</option>
-            <option>Empleado Público Nacional</option>
-            <option>Empleado Público Municipal</option>
-            <option>Empleado Privado</option>
-            <option>Policía</option>
-            <option>Jubilado Provincial</option>
-            <option>Jubilado Nacional</option>
-            <option>Jubilado Municipal</option>
-            <option>Autónomo / Independiente</option>
-            <option>Monotributista</option>
-            <option>Pensionado</option>
-            <option>Beneficiario de Plan Social</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="banco">Banco de Cobro</label>
-          <select id="banco" name="banco" required>
-            <option value="">Seleccione un banco</option>
-
-            <!-- Catamarca -->
-            <option>Banco Nación</option>
-            <option>Banco Macro</option>
-            <!-- Córdoba -->
-            <option>Banco de Córdoba (Bancor)</option>
-            <option>BBVA Argentina</option>
-            <option>Banco Credicoop</option>
-
-            <!-- Santa Fe -->
-            <option>Nuevo Banco de Santa Fe</option>
-            <option>Banco Bica</option>
-
-            <!-- Río Negro -->
-            <option>Banco Patagonia</option>
-
-            <!-- Otros nacionales / privados -->
-            <option>Banco Galicia</option>
-            <option>Banco Santander</option>
-            <option>ICBC Argentina</option>
-            <option>Banco Supervielle</option>
-            <option>Citibank</option>
-            <option>Banco Hipotecario</option>
-            <option>Banco Comafi</option>
-            <option>Banco Industrial</option>
-            <option>Banco de Valores</option>
-            <option>Banco Provincia de Buenos Aires</option>
-            <option>Banco Ciudad</option>
-            <option>Banco Provincia de Neuquén</option>
-
-            <!-- Genérico -->
-            <option>Otro Banco</option>
-
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="provincia">Provincia</label>
-          <select id="provincia" name="provincia" required>
-            <option value="">Seleccione su provincia</option>
-            <option>Buenos Aires</option>
-            <option>CABA</option>
-            <option>Catamarca</option>
-            <option>Chaco</option>
-            <option>Chubut</option>
-            <option>Córdoba</option>
-            <option>Corrientes</option>
-            <option>Entre Ríos</option>
-            <option>Formosa</option>
-            <option>Jujuy</option>
-            <option>La Pampa</option>
-            <option>La Rioja</option>
-            <option>Mendoza</option>
-            <option>Misiones</option>
-            <option>Neuquén</option>
-            <option>Río Negro</option>
-            <option>Salta</option>
-            <option>San Juan</option>
-            <option>San Luis</option>
-            <option>Santa Cruz</option>
-            <option>Santa Fe</option>
-            <option>Santiago del Estero</option>
-            <option>Tierra del Fuego</option>
-            <option>Tucumán</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Paso 3 - Confirmación -->
-      <div class="step">
-        <div class="form-group inline-checkbox">
-          <label for="terminos">
-            <input type="checkbox" id="terminos" name="terminos" required />
-              <span>Acepto los <a href="../legal/terminos_y_condiciones.html" target="_blank">Términos y Condiciones</a> y la <a href="../legal/politica_de_privacidad.html" target="_blank">Política de Privacidad</a>.</span>
-          </label>
-        </div>
-
-        <div class="form-group inline-checkbox">
-          <label for="autorizoContactar">
-           <input type="checkbox" id="autorizoContactar" name="autorizo_contactar" />
-            <span>Autorizo a MateSolidario a contactarme en el futuro si se habilitan propuestas en mi zona o compatibles con mi perfil.</span>
-          </label>
-        </div>
-
-        <p style="font-size: 0.875rem; color: #666; margin-top: 1rem; line-height: 1.4;">
-          Tus datos serán tratados conforme a la Ley 25.326 de Protección de Datos Personales. Podés ejercer tus derechos de acceso, rectificación o supresión escribiéndonos a <a href="mailto:info@matesolidario.com.ar">info@matesolidario.com.ar</a>. Más info en <a href="https://www.argentina.gob.ar/aaip" target="_blank">www.argentina.gob.ar/aaip</a>.
-        </p>
-      </div>
-
-      <div class="buttons">
-        <button type="button" id="prevBtn" disabled>Anterior</button>
-        <button type="button" id="nextBtn">Siguiente</button>
-        <button type="submit" id="submitBtn" style="display:none;">Enviar</button>
-      </div>
-    </form>
-  </div>
   <footer class="main-footer" role="contentinfo">
-  <div class="container footer-content">
-    
-    <div class="footer-logo">
-      <img src="../assets/logo/logo.webp " alt="Mate Solidario" class="logo" id="logo" width="100" height="100">
-      <h2>Mate Solidario</h2>
-    </div>
-
-    <nav class="footer-links" aria-label="Enlaces del sitio">
-      <h4>Enlaces</h4>
-      <ul>
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="../index.html#conocenos">Conocenos</a></li>
-        <li><a href="../formulario/formulario.html">Solicitar crédito</a></li>
-        <li><a href="terminos_y_condiciones.html">Términos y Condiciones</a></li>
-        <li><a href="politica_de_privacidad.html">Política de Privacidad</a></li>
-      </ul>
-    </nav>
-
-    <address class="footer-contacto">
-      <h4>Contacto</h4>
-      <ul>
-        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contacto@matesolidario.com.ar">contacto@matesolidario.com.ar</a></li>
-        <li><i class="fa-solid fa-phone"></i> <a href="tel:+543518127197">+54 9 351 812 7197</a></li>
-      </ul>
-    </address>
-
-    <div class="footer-redes" aria-label="Redes sociales">
-      <h4>Seguinos</h4>
-      <div class="redes-icons">
-        <a href="https://www.facebook.com/people/Mate-Solidario/61576186295289/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/matesolidario" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <img src="../assets/logo/logo.webp" alt="Mate Solidario" class="logo" id="logo" width="100" height="100" loading="lazy">
+        <h2>Mate Solidario</h2>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces del sitio">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../index.html#conocenos">Conocenos</a></li>
+          <li><a href="../formulario/formulario.html">Solicitar crédito</a></li>
+          <li><a href="../legal/terminos_y_condiciones.html">Términos y Condiciones</a></li>
+          <li><a href="../legal/politica_de_privacidad.html">Política de Privacidad</a></li>
+        </ul>
+      </nav>
+      <address class="footer-contacto">
+        <h4>Contacto</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contacto@matesolidario.com.ar">contacto@matesolidario.com.ar</a></li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+543518127197">+54 9 351 812 7197</a></li>
+        </ul>
+      </address>
+      <div class="footer-redes" aria-label="Redes sociales">
+        <h4>Seguinos</h4>
+        <div class="redes-icons">
+          <a href="https://www.facebook.com/people/Mate-Solidario/61576186295289/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/matesolidario" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mate Solidario. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Mate Solidario. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-<script src="../js/formulario.js"></script>
+  <!-- Optimizado: defer scripts para mejorar performance -->
+  <script src="../js/formulario.js" defer></script>
+  <script>
+    // Accesibilidad: cerrar menú con escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('mainNav').classList.remove('open');
+      }
+    });
+    // Mobile nav toggle (accesible)
+    document.getElementById('navToggle')?.addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
