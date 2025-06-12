@@ -449,6 +449,9 @@ body {
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.3s ease;
+  fieldset {
+    border: none !important;
+  }
 }
 .form-container:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
