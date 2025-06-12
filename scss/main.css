@@ -449,6 +449,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.3s ease;
+  text-align: center;
   fieldset {
     border: none !important;
   }
@@ -469,7 +470,7 @@ body {
   justify-content: space-between;
   margin-bottom: 2.5rem;
   counter-reset: step;
-  padding: 0;
+  padding: 20px;
 }
 .progressbar li {
   position: relative;
