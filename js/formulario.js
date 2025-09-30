@@ -156,7 +156,7 @@ form.addEventListener('submit', async (e) => {
     console.error('❌ Error al enviar datos (ignorado para redirección):', error);
   } finally {
     // SIEMPRE redirige según la lógica local (sin depender del backend)
-     fbq('trackCustom', 'formulariocargado');
+     fbq('track', 'Lead'); 
     setTimeout(() => {
       window.location.href = esGanado
         ? '../agradecimiento/gracias_solicitud.html'
